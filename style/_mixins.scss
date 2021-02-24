@@ -1,0 +1,10 @@
+@mixin buttons {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    font-size: map-get($font-size, small);
+    font-variant: all-small-caps;
+    background-image: linear-gradient(to bottom right,rgb(197, 70, 20),rgb(218, 119, 80));
+    color: map-get($textcolor, primary);
+}
