@@ -1,0 +1,22 @@
+@mixin buttons {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    font-size: map-get($font-size, small);
+    font-variant: all-small-caps;
+    letter-spacing: 1px;
+    background-image: linear-gradient(to bottom right,map-get($color, dark-orange),map-get($color, light-orange));
+    color: map-get($color, primary);
+};
+
+@mixin buttons-hover {
+    background-image: none;
+    background-color: map-get($color, primary); //??????? nie widac
+    color: map-get($color, dark-orange);
+}
+
+@mixin box-shadow {
+    background-color: map-get($color, primary);
+    box-shadow: 6px 6px 6px map-get($color, shadow);
+}

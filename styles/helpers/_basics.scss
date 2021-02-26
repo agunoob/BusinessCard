@@ -1,5 +1,5 @@
 :root {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 * {
@@ -9,40 +9,41 @@
 }
 
 body {
-    background-color: $bg-color;
+    background-color: map-get($color, bg);
     display: flex;
     flex-direction: column;
+
     font-family: 'Poppins', sans-serif;
     cursor: default;
 
     h1 {
         font-size: map-get($font-size, extra-big);
-        color: map-get($textcolor, primary);
-        letter-spacing: 5px;
+        color: map-get($color, primary);
+        letter-spacing: map-get($letter-spacing, a)
     }
 
     h2 {
         font-size: map-get($font-size, medium);
-        color: map-get($textcolor, primary);
-        letter-spacing: 3.5px;
+        color: map-get($color, primary);
+        letter-spacing:  map-get($letter-spacing, c)
     }
 
     h3 {
         font-size: map-get($font-size, medium);
-        color: map-get($textcolor, accent);
-        letter-spacing: 3.5px;
+        color: map-get($color, accent);
+        letter-spacing:  map-get($letter-spacing, b)
     }
 
     h4 {
         font-size: map-get($font-size, small);
-        color: map-get($textcolor, secondary);
-        letter-spacing: 3px;
+        color: map-get($color, secondary);
+        letter-spacing:  map-get($letter-spacing, b)
     }
 
     p {
         font-size: map-get($font-size, extra-small);
-        color: map-get($textcolor, secondary);
-        letter-spacing: 1px;
+        color: map-get($color, secondary);
+        line-height: 2.5;
     }
 
     button {
@@ -51,10 +52,14 @@ body {
             outline: none;
             border: none;
         }
+        &:hover {
+            @include buttons-hover;
+            cursor: pointer;
+        }
     }
 
-    button:hover, a:hover {
+    a:hover {
         cursor: pointer;
+        color: map-get($color, secondary);
     }
 }
-

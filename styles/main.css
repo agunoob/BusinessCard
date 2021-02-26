@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+:root {
+  font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(212, 200, 214, 0.185);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  cursor: default;
+}
+
+body h1 {
+  font-size: 4.5rem;
+  color: white;
+  letter-spacing: 0.6rem;
+}
+
+body h2 {
+  font-size: 1.4rem;
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+body h3 {
+  font-size: 1.4rem;
+  color: #444764;
+  letter-spacing: 0.2rem;
+}
+
+body h4 {
+  font-size: 1.2rem;
+  color: black;
+  letter-spacing: 0.2rem;
+}
+
+body p {
+  font-size: 1rem;
+  color: black;
+  line-height: 2.5;
+}
+
+body button {
+  height: 40px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-variant: all-small-caps;
+  letter-spacing: 1px;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#c54614), to(#da7750));
+  background-image: linear-gradient(to bottom right, #c54614, #da7750);
+  color: white;
+}
+
+body button:focus {
+  outline: none;
+  border: none;
+}
+
+body button:hover {
+  background-image: none;
+  background-color: white;
+  color: #c54614;
+  cursor: pointer;
+}
+
+body a:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.nav-box {
+  height: 6vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav-box a {
+  position: relative;
+  margin: auto 10px;
+  color: #444764;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  font-variant: all-small-caps;
+}
+
+.nav-box a::before {
+  content: '|';
+  position: absolute;
+  left: -12px;
+  color: #444764;
+}
+
+.header-image {
+  height: 75vmin;
+  width: 100%;
+  background-color: #444764;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../photos/main_picture.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../photos/main_picture.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.header-image .header-text-box {
+  position: relative;
+  top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-image .header-text-box .header-icons-box {
+  height: 40px;
+  width: 300px;
+  position: relative;
+  top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header-image .header-text-box .header-icons-box .youtube {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-image .header-text-box .header-icons-box a {
+  margin: auto 10px;
+}
+
+.contact-me-box {
+  height: 19vmin;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-me-box button {
+  margin: 15px 20px;
+}
+
+.about-me-and-skills-box {
+  height: 100vmin;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about-me-and-skills-box .about-me-box {
+  height: 45vmin;
+  width: 75%;
+  position: relative;
+  background-color: #f1eef5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-me-and-skills-box .about-me-box h3 {
+  position: absolute;
+  top: 8px;
+  left: 110px;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box {
+  height: 30vmin;
+  width: 150%;
+  position: relative;
+  left: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 6px 6px 6px rgba(206, 202, 212, 0.425);
+          box-shadow: 6px 6px 6px rgba(206, 202, 212, 0.425);
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
+  margin: auto 30px;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .profile-picture {
+  height: 90px;
+  width: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box {
+  height: 90%;
+  width: 60%;
+  padding: 0.6rem;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box strong {
+  color: #444764;
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-variant: all-small-caps;
+  letter-spacing: 0.1rem;
+}
+
+.about-me-and-skills-box .skills-box {
+  height: 45vmin;
+  width: 75%;
+  position: relative;
+  top: 10vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #f1eef5;
+}
+
+.about-me-and-skills-box .skills-box h3 {
+  position: absolute;
+  top: 8px;
+  left: 30px;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box {
+  height: 30vmin;
+  width: 150%;
+  position: relative;
+  right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  -webkit-box-shadow: 6px 6px 6px rgba(206, 202, 212, 0.425);
+          box-shadow: 6px 6px 6px rgba(206, 202, 212, 0.425);
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box .skills-items {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box .skills-items i img {
+  width: 80px;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box .skills-items p {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444764;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box .skills-items.css-sass {
+  border-left: dotted 6px #c54614;
+  border-right: dotted 6px #c54614;
+}
+
+.portfolio-box {
+  height: 100vmin;
+  width: 100%;
+}
+
+.portfolio-box h3 {
+  text-align: center;
+}
+
+.contact-copyrights-box {
+  height: 100vmin;
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
