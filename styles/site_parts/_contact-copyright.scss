@@ -84,6 +84,9 @@
 
                 input, form
                 {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
                     @include buttons-hover;
                     height: 8%;
                     padding: 0.5rem 2rem;
@@ -172,6 +175,7 @@
         {
             width: 5rem;
             display: block;
+            animation: tilt-astronaut 6s linear infinite;
         }
     }
 }

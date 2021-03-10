@@ -13,6 +13,7 @@
         background-color: map-get($color, accent-fade);
         display: flex;
         align-items: center;
+        justify-items: center;
         
         h3
         {
@@ -69,7 +70,15 @@
             .description-box
             {
                 width: 40%;
+                height: 100%;
                 overflow: auto;
+                display: flex;
+                align-items: center;
+
+                p
+                {
+                    height: 98%;
+                }
             }
         }
     }
@@ -111,9 +120,27 @@
                 justify-content: center;
             }
 
-            i img
+            i 
             {
-                width: 8rem;
+                img
+                {
+                    width: 8rem;
+                }
+
+                .img-html
+                {
+                    animation: skills-moves 20s infinite;
+                }
+
+                .img-sass
+                {
+                    animation: skills-moves 20s 3.5s infinite;
+                }
+
+                .img-js
+                {
+                    animation: skills-moves 20s  7s infinite;
+                }
             }
 
             p

@@ -7,8 +7,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -171,8 +172,15 @@ body button:focus {
 body button:hover {
   background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
   border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
   cursor: pointer;
 }
 
@@ -397,6 +405,7 @@ body .contact-copyrights-box .copyrights div p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  justify-items: center;
 }
 
 .about-me-and-skills-box .about-me-box h3 {
@@ -456,7 +465,18 @@ body .contact-copyrights-box .copyrights div p {
 
 .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
   width: 40%;
+  height: 100%;
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+  height: 98%;
 }
 
 .about-me-and-skills-box .skills-box {
@@ -514,6 +534,21 @@ body .contact-copyrights-box .copyrights div p {
 
 .about-me-and-skills-box .skills-box .skills-inner-box i img {
   width: 8rem;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-html {
+  -webkit-animation: skills-moves 20s infinite;
+          animation: skills-moves 20s infinite;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-sass {
+  -webkit-animation: skills-moves 20s 3.5s infinite;
+          animation: skills-moves 20s 3.5s infinite;
+}
+
+.about-me-and-skills-box .skills-box .skills-inner-box i .img-js {
+  -webkit-animation: skills-moves 20s  7s infinite;
+          animation: skills-moves 20s  7s infinite;
 }
 
 .about-me-and-skills-box .skills-box .skills-inner-box p {
@@ -633,6 +668,60 @@ body .contact-copyrights-box .copyrights div p {
           transform: translateY(0);
 }
 
+.modal-bg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-bg .modal-content {
+  position: relative;
+  height: 90%;
+  width: 90%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
+  color: #c54614;
+  border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
+  border: solid 0.2rem;
+}
+
+.modal-bg .modal-content .exit-img {
+  width: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.modal-bg .modal-content .exit-img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
 .contact-copyrights-box {
   height: 100vmin;
   width: 100%;
@@ -745,10 +834,20 @@ body .contact-copyrights-box .copyrights div p {
 }
 
 .contact-copyrights-box .contact-box .contact-form .form input, .contact-copyrights-box .contact-box .contact-form .form form {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
+  -ms-background-image: linear-gradient(to bottom right, white, white);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  -webkit-background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
   border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
+  -ms-border: solid 0.1rem #c54614;
+  -webkit-border: solid 0.1rem #c54614;
   height: 8%;
   padding: 0.5rem 2rem;
   border-radius: 0.6rem;
@@ -830,6 +929,8 @@ body .contact-copyrights-box .copyrights div p {
 .contact-copyrights-box .copyrights i img {
   width: 5rem;
   display: block;
+  -webkit-animation: tilt-astronaut 6s linear infinite;
+          animation: tilt-astronaut 6s linear infinite;
 }
 
 @media screen and (max-width: 425px) {
@@ -999,6 +1100,7 @@ body .contact-copyrights-box .copyrights div p {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
     width: 70%;
+    height: 40%;
     overflow: auto;
   }
   body .about-me-and-skills-box .skills-box {
@@ -1345,7 +1447,8 @@ body .contact-copyrights-box .copyrights div p {
     overflow: auto;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
-    line-height: 1.8;
+    height: 80%;
+    line-height: 2;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vh;
@@ -1565,7 +1668,8 @@ body .contact-copyrights-box .copyrights div p {
     overflow: auto;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
-    line-height: 1.8;
+    height: 80%;
+    line-height: 2;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vmin;
@@ -1616,6 +1720,106 @@ body .contact-copyrights-box .copyrights div p {
   }
   body .contact-copyrights-box .copyrights .contact-icons-box a img {
     margin-right: 4rem;
+  }
+}
+
+@-webkit-keyframes tilt-astronaut {
+  0% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+            transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+  }
+  50% {
+    -webkit-transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+            transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+            transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+@keyframes tilt-astronaut {
+  0% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+  25% {
+    -webkit-transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+            transform: translateY(-0.3rem) translateX(-0.3rem) rotate(7deg);
+  }
+  50% {
+    -webkit-transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+            transform: translateY(-0.6rem) translateX(-0.8rem) rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+            transform: translateY(-0.2rem) translateX(-0.6rem) rotate(-9deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0) rotate(0);
+            transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+@-webkit-keyframes skills-moves {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  6% {
+    -webkit-transform: scale(1.125);
+            transform: scale(1.125);
+    -webkit-filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+            filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+  }
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+}
+
+@keyframes skills-moves {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  6% {
+    -webkit-transform: scale(1.125);
+            transform: scale(1.125);
+    -webkit-filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+            filter: drop-shadow(0.5rem 0.5rem 0.1rem #c54614);
+  }
+  12% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: drop-shadow(0 0 0);
+            filter: drop-shadow(0 0 0);
   }
 }
 /*# sourceMappingURL=main.css.map */
