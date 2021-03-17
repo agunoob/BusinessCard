@@ -68,11 +68,6 @@ const baza =
                     "id": 2,
                     "title": "titmouse",
                     "photo": "./photos/portfolio-drawings/titmouse.jpg"
-                },
-                {
-                    "id": 3,
-                    "title": "bird",
-                    "photo": "./photos/portfolio-drawings/bird.png"
                 }
             ]
         },
@@ -123,11 +118,6 @@ const baza =
                 },
                 {
                     "id": 2,
-                    "title": "city project",
-                    "photo": "./photos/portfolio-city/3.png"
-                },
-                {
-                    "id": 3,
                     "title": "city project",
                     "photo": "./photos/portfolio-city/4.png"
                 }
@@ -259,13 +249,14 @@ function photoCover()
 };
 photoCover();
 
-function portfolio() {
+function portfolio()
+{
     const btns = document.getElementsByClassName('btn');
     for (let i = 0; i < btns.length; i++)
     {
         btns[i].onclick = function openModal()
         {
-            console.log('nr zdjecia: ', i)
+            // console.log('nr zdjecia: ', i)
             let bG = createModalBg();
             let content = createModalContent(bG);
             createModalExit(content, bG);
@@ -289,7 +280,7 @@ function createModalContent(modalBg)
 {
        const createModalContent = document.createElement('div');
         let modalContent = modalBg.appendChild(createModalContent);
-        modalContent.classList.add('modal-content');
+        modalContent.classList.add('modal-content', 'modal-content-open');
         return modalContent;
 };
 
@@ -348,10 +339,305 @@ function divForProjects(modalContent, i)
             const createProjectImg = document.createElement('img');
             let projectImg = displayProjects.appendChild(createProjectImg);
             projectImg.src = mojaBaza.nazwa[i].examples[j].photo;
+            projectImg.onclick = function openImg()
+            {
+                let imgModalBg = divImgModalBg(displayProjects);
+                imgModal(i, j, imgModalBg);
+                exitImgModal(imgModalBg);
+            }
         }
     }
     displayProjects();
 };
+
+function divImgModalBg(displayProjects)
+{
+    const createImgModalBg = document.createElement('div');
+    let imgModalBg = displayProjects.appendChild(createImgModalBg);
+    imgModalBg.classList.add('img-modal-bg');
+    return imgModalBg;
+};
+
+function imgModal(i, j, imgModalBg)
+{
+    const createImgModal = document.createElement('img');
+    let imgModal = imgModalBg.appendChild(createImgModal);
+    imgModal.src = mojaBaza.nazwa[i].examples[j].photo;
+};
+
+function exitImgModal(imgModalBg)
+{
+    window.onclick = function closeModalImgOutside (event)
+    {
+        if (event.target == imgModalBg)
+        {
+            imgModalBg.style.display = 'none';
+        }
+    }
+
+//     //show modal btn when hover 400px from top
+//     imgModalBg.addEventListener("mousemove", function(event) {
+//         if(event.screenY < 400)
+//         {
+//             exitImgModal.classList.add('show-exit-btn');
+//         }
+//         else if(event.screenY > 400)
+//         {
+//             exitImgModal.classList.remove('show-exit-btn');
+//         }
+//     })
+};
+
+function showSkills()
+{
+    const itemsy = document.querySelectorAll('.skills-items');
+    const skills = document.querySelectorAll('.skills-bar');
+    const bars = document.querySelectorAll('.bar');
+    const shineHeader = document.querySelectorAll('.header');
+    const number = document.querySelectorAll('.number');
+    let odliczanie, odliczanieTwo, odliczanieThree;
+
+    for (let i = 0; i < itemsy.length; i++)
+    {
+        itemsy[i].onmouseenter = function()
+        {
+            console.log('mouseOVER icon', i)
+            skills[i].classList.add('open');
+            shineHeader[i].classList.add('shine-header');
+
+            if (i==0)
+            {
+                bars[0].classList.add('bar-html');
+                number[0].classList.add('number-show');
+                let counter = 0;
+                number[0].innerHTML = '0%';
+                setTimeout(function()
+                {
+                    odliczanie = setInterval(()=>
+                    {
+                        if(counter == 70)
+                        {
+                            clearInterval(odliczanie);
+                        }
+                        else
+                        {
+                            counter++;
+                            number[0].innerHTML = counter + '%';
+                            console.log(counter)
+                        }
+                        return
+                    }, 25)
+                }, 700);
+            }
+            else if (i==1)
+            {
+               bars[1].classList.add('bar-css');
+               number[1].classList.add('number-show');
+               let counterTwo = 0;
+               number[1].innerHTML = '0%';
+               setTimeout(function()
+               {
+                odliczanieTwo = setInterval(()=>
+                    {
+                        if(counterTwo == 60)
+                        {
+                            clearInterval(odliczanieTwo);
+                        }
+                        else
+                        {
+                            counterTwo++;
+                            number[1].innerHTML = counterTwo + '%';
+                            console.log(counterTwo)
+                        }
+                        return
+                    }, 30)
+                }, 700);
+            }
+            else if (i==2)
+            {
+                bars[2].classList.add('bar-js');
+                number[2].classList.add('number-show');
+                let counterThree = 0;
+                number[2].innerHTML = '0%';
+                setTimeout(function()
+                {
+                    odliczanieThree = setInterval(()=>
+                    {
+                        if(counterThree == 40)
+                        {
+                            clearInterval(odliczanieThree);
+                        }
+                        else
+                        {
+                            counterThree++;
+                            number[2].innerHTML = counterThree + '%';
+                            console.log(counterThree)
+                        }
+                        return
+                    }, 40)
+                }, 700);
+            }
+        }
+      
+        skills[i].onmouseleave = function()
+        {
+            console.log('mouseOUT modal', i)
+            skills[i].classList.remove('open');
+            shineHeader[i].classList.remove('shine-header');
+
+            if (i==0)
+            {
+                clearInterval(odliczanie);
+                bars[0].classList.remove('bar-html');
+                number[0].classList.remove('number-show');
+                // number[0].innerHTML = '0%';
+            }
+            else if (i==1)
+            {
+                clearInterval(odliczanieTwo);
+                bars[1].classList.remove('bar-css');
+                number[1].classList.remove('number-show');
+                // number[1].innerHTML = '0%';
+            }
+            else if (i==2)
+            {
+                clearInterval(odliczanieThree);
+                bars[2].classList.remove('bar-js');
+                number[2].classList.remove('number-show');
+                // number[2].innerHTML = '0%';
+            }
+        }
+    }
+};
+showSkills();
+
+function showSkillsMobile()
+{
+    const skillsBox = document.querySelector('.skills-box');
+    const skillsBar = document.querySelectorAll('.skills-bar');
+    const shineHeader = document.querySelectorAll('.header');
+    const number = document.querySelectorAll('.number');
+    const bars = document.querySelectorAll('.bar');
+    const skillsInnerBox = document.querySelector('.skills-inner-box');
+    let odliczanie, odliczanieTwo, odliczanieThree;
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > (skillsBox.offsetTop) && window.scrollY < (skillsBox.offsetTop + 4))
+        // skillsBox.offsetHeight
+        {
+            console.log('ładuj')
+            skillsInnerBox.classList.add('open-skills-mobile');
+            number[0].innerHTML = '0%';
+            number[1].innerHTML = '0%';
+            number[2].innerHTML = '0%';
+            
+            skillsBar.forEach(element =>
+            {
+                element.classList.add('skills-bar-mobile');
+                element.style.transition = 'height ease-out 0.6s, opacity ease 1s';
+            });
+
+            shineHeader.forEach(e =>
+            {
+                e.classList.add('shine-header');
+            });
+
+            number.forEach(num =>
+            {
+                num.classList.add('number-show');
+            });
+
+            for (let i = 0; i < bars.length; i++)
+            {
+                bars[0].classList.add('bar-html');
+                let counter = 0;
+                // clearInterval(odliczanie);
+                setTimeout(function()
+                {
+                    odliczanie = setInterval(()=>
+                    {
+                        if(counter == 70)
+                        {
+                            clearInterval(odliczanie);
+                        }
+                        else
+                        {
+                            counter++;
+                            number[0].innerHTML = counter + '%';
+                        }
+                        return
+                    }, 25)
+                }, 700);
+               
+                bars[1].classList.add('bar-css');
+                let counterTwo = 0;
+                // clearInterval(odliczanieTwo);
+                setTimeout(function()
+                {
+                    odliczanieTwo = setInterval(()=>
+                    {
+                        if(counterTwo == 60)
+                        {
+                            clearInterval(odliczanieTwo);
+                        }
+                        else
+                        {
+                            counterTwo++;
+                            number[1].innerHTML = counterTwo + '%';
+                        }
+                        return
+                    }, 30)
+                }, 700);
+
+                bars[2].classList.add('bar-js');
+                let counterThree = 0;
+                // clearInterval(odliczanieThree);
+                setTimeout(function()
+                {
+                    odliczanieThree = setInterval(()=>
+                    {
+                        if(counterThree == 40)
+                        {
+                            clearInterval(odliczanieThree);
+                        }
+                        else
+                        {
+                            counterThree++;
+                            number[2].innerHTML = counterThree + '%';
+                        }
+                        return
+                    }, 40)
+                }, 700);
+            }
+        }
+        else if (window.scrollY < (skillsBox.offsetTop - 140) && window.scrollY > (skillsBox.offsetTop - 180) 
+        || window.scrollY > (skillsBox.offsetTop + 220) && window.scrollY < (skillsBox.offsetTop + 260))
+        {
+            console.log('reset');
+            clearInterval(odliczanie);
+            clearInterval(odliczanieTwo);
+            clearInterval(odliczanieThree);
+            skillsInnerBox.classList.remove('open-skills-mobile');
+
+            skillsBar.forEach(element =>
+            {
+                element.classList.remove('skills-bar-mobile');
+                element.style.transition = 'none';
+            });
+
+            shineHeader.forEach(e =>
+            {
+                e.classList.remove('shine-header');
+            });
+
+            number.forEach(num =>
+            {
+                num.classList.remove('number-show');
+            });
+        }
+    })
+};
+showSkillsMobile();
 
 //no picture dragging
 window.ondragstart = function()

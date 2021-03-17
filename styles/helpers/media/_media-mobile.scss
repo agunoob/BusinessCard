@@ -33,15 +33,12 @@
                 justify-self: center;
                 background-color: map-get($color, accent);
                 z-index: 1;
-                // opacity: 0;
                 transform: translateX(100%);
                 transition: transform 0.6s ease-out;
-                // opacity 0.5s, 
             }
 
             .nav-box-open
             {
-                // opacity: 1;
                 transform: translateX(0%);
 
                 .close-burger
@@ -53,6 +50,11 @@
 
                     & img {
                     width: 2.5rem;
+                    }
+
+                    &:hover
+                    {
+                        cursor: pointer;
                     }
                 }
 
@@ -69,10 +71,11 @@
                     content: '';
                     left: 0;
                     bottom: 0;
-                    width: 120%;
+                    width: 0;
                     height: 0.1rem;
                     background-color: map-get($color, primary);
                     position: absolute;
+                    transition: width 0.3s ease-in-out;
                 }
 
                 a:hover, a:focus
@@ -83,6 +86,7 @@
 
                 a:hover::before, a:focus::before
                 {
+                    width: 120%;
                     background-color: map-get($color, bright-orange);
                 }
             }
@@ -190,20 +194,12 @@
                     {
                       text-align: center;
                     }
-
-                    .description-box
-                    {
-                        width: 70%;
-                        height: 40%;
-                        overflow: auto;
-                    }
                 }
             }
             
             .skills-box {
                 height: 100vh;
                 width: 100%;
-                // top: 5%;
                 top: 0;
                 flex-direction: column;
                 align-items: center;
@@ -211,7 +207,7 @@
 
                 h3
                 {
-                    position: static;
+                    left: auto;
                     margin: 0 auto 2.5rem auto;
                 }
 
@@ -228,6 +224,7 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
+                        pointer-events: none;
                     }
 
 
@@ -253,6 +250,106 @@
                     p
                     {
                         padding: 0;
+                    }
+                }
+
+                .open-skills-mobile
+                {
+                    height: 85%;
+                    display: flex;
+                    flex-direction: row;
+                    background-color: map-get($color, primary);
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    i img, p
+                    {
+                        display: none;
+                    }
+
+                    .skills-items
+                    {
+                        display: none;
+                    }
+
+                    .skills-bar
+                    {
+                        height: 0;
+                        opacity: 0;
+                        transition: none;
+                        transition: height ease-out 0.6s, opacity ease 1s;
+                    }
+                    .skills-bar-mobile
+                    {
+                        position: relative;
+                        width: calc(100% / 3);
+                        height: 85%;
+                        opacity: 1;
+
+                        .for-header-and-number
+                        {
+                            flex-direction: column;
+                            height: 20%;
+
+                            .header
+                            {
+                                font-size: 2rem;
+                            }
+
+                            p
+                            {
+                                display: block;
+                            }
+
+                            .number
+                            {
+                                margin-left: 0;
+                            }
+
+                            .number-show
+                            {
+                                -webkit-animation: showNumber 3s forwards 0.3s;
+                                animation: showNumber 3s forwards 0.3s;
+                            }
+                        }
+
+                        .shine-header
+                        {
+                            -webkit-animation: shine ease 3s forwards 0.6s;
+                            animation: shine ease 3s forwards 0.6s;
+                        }
+
+                        .outside-bar
+                        {
+                            width: 3rem;
+                            height: 70%;
+                            align-items: flex-end;
+                            justify-content: center;
+
+                            .bar
+                            {
+                                height: 0;
+                                width: 90%;
+                            }
+
+                            .bar-html
+                            {
+                                -webkit-animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+                            }
+        
+                            .bar-css
+                            {
+                                -webkit-animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+                            }
+        
+                            .bar-js
+                            {
+                                -webkit-animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+                            }
+                        }
                     }
                 }
             }
@@ -290,6 +387,35 @@
                 }
             }
         }
+            //modal in portfolio
+            .modal-bg
+            {
+                .modal-content
+                {
+                    overflow: auto;
+                    height: 95%;
+                    width: 95%;
+
+                    .div-for-projects
+                    {
+                        margin: 0;
+                        flex-direction: column;
+                        height: 70%;
+
+                        .display-projects
+                        {
+                            min-height: 20%;
+                            width: 90%;
+                        }
+                    }
+
+                    .exit-img
+                    {
+                        width: 3rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
 
         //contact-me-part
         .contact-copyrights-box

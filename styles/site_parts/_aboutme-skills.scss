@@ -63,21 +63,7 @@
                     font-size: map-get($font-size, big);
                     font-weight: 900;
                     font-variant: all-small-caps;
-                    letter-spacing:  map-get($letter-spacing, mid-wide);
-                }
-            }
-
-            .description-box
-            {
-                width: 40%;
-                height: 100%;
-                overflow: auto;
-                display: flex;
-                align-items: center;
-
-                p
-                {
-                    height: 98%;
+                    letter-spacing: map-get($letter-spacing, mid-wide);
                 }
             }
         }
@@ -108,7 +94,6 @@
             position: relative;
             right: 8rem;
             display: flex;
-            // align-items: center;
             justify-content: space-around;
             @include box-shadow;
 
@@ -125,21 +110,7 @@
                 img
                 {
                     width: 8rem;
-                }
-
-                .img-html
-                {
-                    animation: skills-moves 20s infinite;
-                }
-
-                .img-sass
-                {
-                    animation: skills-moves 20s 1.2s infinite;
-                }
-
-                .img-js
-                {
-                    animation: skills-moves 20s  2.4s infinite;
+                    cursor: pointer;
                 }
             }
 
@@ -149,6 +120,110 @@
                 font-size: map-get($font-size, small);
                 font-weight: bold;
                 color: map-get($color, accent)
+            }
+
+            .skills-bar
+            {
+                display: flex;
+                position: absolute;
+                background-color: map-get($color, primary);
+                height: 100%;
+                width: 0%;
+                opacity: 0;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                overflow: hidden;
+                transition: opacity ease 0.5s, width ease-in-out 0.5s;
+
+                .for-header-and-number
+                {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .header
+                    {
+                        top: 0;
+                        left: 0;
+                        font-size: map-get($font-size, big-for-menu);
+                        position: relative;
+                        background: linear-gradient(20deg, map-get($color, bright-orange), map-get($color, accent));
+                        background-position: right bottom;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-size: 900% 200%;
+                    }
+
+                    .number
+                    {
+                        width: 8rem;
+                        margin-left: 3rem;
+                        font-weight: normal;
+                        font-size: map-get($font-size, big-for-menu);
+                        color: map-get($color, secondary);
+                        opacity: 0;
+                
+                    }
+
+                    .number-show
+                    {
+                        -webkit-animation: showNumber 3s forwards 0.3s;
+                        animation: showNumber 3s forwards 0.3s;
+                    }
+                }
+
+                .shine-header
+                {
+                    -webkit-animation: shine ease 3s forwards 0.6s;
+                    animation: shine ease 3s forwards 0.6s;
+                }
+
+                .outside-bar
+                {
+                    width: 65%;
+                    height: 2rem;
+                    background-color: rgb(155, 155, 155);
+                    border: solid 0.2rem map-get($color, light-grey);
+                    border-radius: 0.6rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    // overflow: hidden;
+
+                    .bar
+                    {
+                        height: 90%;
+                        background-color: map-get($color, bright-orange);
+                        border-radius: 0.4rem;
+                        box-shadow: 0 0 1.5rem map-get($color, bright-orange);;
+                    }
+
+                    .bar-html
+                    {
+                        -webkit-animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+                        animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+                    }
+
+                    .bar-css
+                    {
+                        -webkit-animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+                    }
+
+                    .bar-js
+                    {
+                        -webkit-animation: shineBarJS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarJS ease-out 1.8s forwards 0.65s;
+                    }
+                }
+            }
+
+            .open
+            {
+                width: 100%;
+                opacity: 1;
             }
         }
     }
