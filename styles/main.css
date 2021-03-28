@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 :root {
   font-size: 10px;
-  scroll-behavior: smooth;
 }
 
 * {
@@ -151,14 +150,22 @@ body .arrow-box:hover i img {
 body button {
   height: 4rem;
   width: 15rem;
+  -ms-border: none;
+  -moz-border: none;
+  -webkit-border: none;
   border: none;
   border-radius: 0.6rem;
   font-size: 2rem;
   font-variant: all-small-caps;
   letter-spacing: 0.1rem;
+  -ms-background-image: linear-gradient(to bottom right, #c54614, #da7750);
+  -moz-background-image: linear-gradient(to bottom right, #c54614, #da7750);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(#c54614), to(#da7750));
+  -webkit-background-image: linear-gradient(to bottom right, #c54614, #da7750);
   background-image: -webkit-gradient(linear, left top, right bottom, from(#c54614), to(#da7750));
   background-image: linear-gradient(to bottom right, #c54614, #da7750);
   color: white;
+  font-family: 'Poppins', sans-serif;
   -webkit-transition: border 1s, color 1s linear;
   transition: border 1s, color 1s linear;
 }
@@ -169,17 +176,17 @@ body button:focus {
 }
 
 body button:hover {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
-  background-image: linear-gradient(to bottom right, white, white);
-  -moz-background-image: linear-gradient(to bottom right, white, white);
   -ms-background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
   -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   -webkit-background-image: linear-gradient(to bottom right, white, white);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
-  border: solid 0.1rem #c54614;
-  -moz-border: solid 0.1rem #c54614;
   -ms-border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
   -webkit-border: solid 0.1rem #c54614;
+  border: solid 0.1rem #c54614;
   cursor: pointer;
 }
 
@@ -329,6 +336,11 @@ body input:focus, body textarea:focus {
   margin: 2.5rem auto;
 }
 
+.nav-contact-box .header-image .header-text-box h2 {
+  width: 60%;
+  text-align: center;
+}
+
 .nav-contact-box .header-image .header-text-box .header-icons-box {
   height: 4rem;
   width: 70%;
@@ -353,7 +365,7 @@ body input:focus, body textarea:focus {
 
 .nav-contact-box .header-image .header-text-box .header-icons-box a:hover {
   -webkit-transform: translate(0, -0.6rem);
-          transform: translate(0, -0.6rem);
+  transform: translate(0, -0.6rem);
 }
 
 .nav-contact-box .contact-me-box {
@@ -375,6 +387,30 @@ body input:focus, body textarea:focus {
 
 .nav-contact-box .contact-me-box button {
   margin: 1.5rem 2rem;
+}
+
+.cv-bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cv-bg .cv {
+  max-height: 98%;
+  width: auto;
+  -webkit-animation: niceOpenImg ease-in-out 0.8s;
+  animation: niceOpenImg ease-in-out 0.8s;
 }
 
 .about-me-and-skills-box {
@@ -456,6 +492,25 @@ body input:focus, body textarea:focus {
   font-weight: 900;
   font-variant: all-small-caps;
   letter-spacing: 0.3rem;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
+  height: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+  line-height: 2;
 }
 
 .about-me-and-skills-box .skills-box {
@@ -708,15 +763,14 @@ body input:focus, body textarea:focus {
   position: absolute;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(68, 71, 100, 0.9)));
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(68, 71, 100, 0.9));
-  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
   -webkit-transition: 1.2s;
   transition: 1.2s;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -742,8 +796,8 @@ body input:focus, body textarea:focus {
 }
 
 .portfolio-box .portfolio-gallery .boxes:hover .photo-cover {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(0%);
+  transform: translateY(0);
 }
 
 .modal-bg {
@@ -769,17 +823,17 @@ body input:focus, body textarea:focus {
   position: relative;
   height: 90%;
   width: 90%;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
-  background-image: linear-gradient(to bottom right, white, white);
-  -moz-background-image: linear-gradient(to bottom right, white, white);
   -ms-background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
   -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   -webkit-background-image: linear-gradient(to bottom right, white, white);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
-  border: solid 0.1rem #c54614;
-  -moz-border: solid 0.1rem #c54614;
   -ms-border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
   -webkit-border: solid 0.1rem #c54614;
+  border: solid 0.1rem #c54614;
   border: solid 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -884,7 +938,7 @@ body input:focus, body textarea:focus {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
@@ -893,7 +947,7 @@ body input:focus, body textarea:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: unset;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0);
   -o-object-fit: contain;
   object-fit: contain;
   -webkit-animation: niceOpenImg ease-in-out 1.8s;
@@ -902,6 +956,24 @@ body input:focus, body textarea:focus {
 
 .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img:hover {
   cursor: default;
+}
+
+.modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal {
+  width: 2.8rem;
+  height: 2.8rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 1rem;
+  min-height: auto;
+  -webkit-transform: translateY(-9rem);
+  transform: translateY(-9rem);
+  z-index: 5;
+  background-color: white;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 3rem;
+  visibility: hidden;
 }
 
 .modal-bg .modal-content .exit-img {
@@ -921,7 +993,7 @@ body input:focus, body textarea:focus {
 .modal-bg .modal-content .exit-img:hover {
   cursor: pointer;
   -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .contact-copyrights-box {
@@ -1039,17 +1111,17 @@ body input:focus, body textarea:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
-  background-image: linear-gradient(to bottom right, white, white);
-  -moz-background-image: linear-gradient(to bottom right, white, white);
   -ms-background-image: linear-gradient(to bottom right, white, white);
+  -moz-background-image: linear-gradient(to bottom right, white, white);
   -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
   -webkit-background-image: linear-gradient(to bottom right, white, white);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(white), to(white));
+  background-image: linear-gradient(to bottom right, white, white);
   color: #c54614;
-  border: solid 0.1rem #c54614;
-  -moz-border: solid 0.1rem #c54614;
   -ms-border: solid 0.1rem #c54614;
+  -moz-border: solid 0.1rem #c54614;
   -webkit-border: solid 0.1rem #c54614;
+  border: solid 0.1rem #c54614;
   color: #444764;
   height: 8%;
   padding: 0.5rem 2rem;
@@ -1122,7 +1194,7 @@ body input:focus, body textarea:focus {
 
 .contact-copyrights-box .copyrights .contact-icons-box a img:hover {
   -webkit-transform: translate(0, -0.6rem);
-          transform: translate(0, -0.6rem);
+  transform: translate(0, -0.6rem);
 }
 
 .contact-copyrights-box .copyrights .contact-icons-box .contact-twitch img {
@@ -1146,6 +1218,10 @@ body input:focus, body textarea:focus {
   body .burger-icon {
     display: block;
   }
+  body .arrow-box {
+    bottom: 1rem;
+    right: 1rem;
+  }
   body .nav-contact-box {
     height: 100vh;
   }
@@ -1166,7 +1242,7 @@ body input:focus, body textarea:focus {
     background-color: #444764;
     z-index: 1;
     -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.6s ease-out;
     transition: -webkit-transform 0.6s ease-out;
     transition: transform 0.6s ease-out;
@@ -1174,7 +1250,7 @@ body input:focus, body textarea:focus {
   }
   body .nav-contact-box .nav-box-open {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
@@ -1306,6 +1382,12 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box, body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
     text-align: center;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box {
+    height: 40%;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    line-height: 3;
   }
   body .about-me-and-skills-box .skills-box {
     height: 100vh;
@@ -1503,6 +1585,20 @@ body input:focus, body textarea:focus {
     min-height: 20%;
     width: 90%;
   }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
+    max-width: 95%;
+    height: auto;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal {
+    visibility: visible;
+    -webkit-animation: showModalImg ease-out 1.2s forwards;
+    animation: showModalImg ease-out 1.2s forwards;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal:hover {
+    cursor: pointer;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
   body .modal-bg .modal-content .exit-img {
     width: 3rem;
     padding: 0.5rem;
@@ -1595,7 +1691,7 @@ body input:focus, body textarea:focus {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  body .contact-copyrights-box .copyrights i img {
+  body .contact-copyrights-box .copyrights i {
     display: none;
   }
   body .contact-copyrights-box .copyrights div p {
@@ -1619,6 +1715,9 @@ body input:focus, body textarea:focus {
   body .burger-icon {
     display: block;
   }
+  body .arrow-box {
+    bottom: 7rem;
+  }
   body .nav-contact-box {
     height: 100vh;
   }
@@ -1639,7 +1738,7 @@ body input:focus, body textarea:focus {
     background-color: #444764;
     z-index: 1;
     -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.6s ease-out;
     transition: -webkit-transform 0.6s ease-out;
     transition: transform 0.6s ease-out;
@@ -1647,7 +1746,7 @@ body input:focus, body textarea:focus {
   }
   body .nav-contact-box .nav-box-open {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
@@ -1741,9 +1840,6 @@ body input:focus, body textarea:focus {
     left: 4rem;
     overflow: hidden;
   }
-  body .about-me-and-skills-box .about-me-box .about-me-inner-box:hover .description-box {
-    line-height: 1.4;
-  }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
     margin: auto 1.5rem;
   }
@@ -1804,6 +1900,20 @@ body input:focus, body textarea:focus {
         align-self: center;
     margin-left: 0;
   }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal {
+    visibility: visible;
+    -webkit-animation: showModalImg ease-out 1.2s forwards;
+    animation: showModalImg ease-out 1.2s forwards;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal:hover {
+    cursor: pointer;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
   body .contact-copyrights-box {
     height: 100vh;
   }
@@ -1828,7 +1938,7 @@ body input:focus, body textarea:focus {
   body .contact-copyrights-box .copyrights .contact-icons-box a img {
     margin-right: 3rem;
   }
-  body .contact-copyrights-box .copyrights i img {
+  body .contact-copyrights-box .copyrights i {
     display: none;
   }
 }
@@ -1842,6 +1952,9 @@ body input:focus, body textarea:focus {
   }
   body .burger-icon {
     display: block;
+  }
+  body .arrow-box {
+    bottom: 7rem;
   }
   body .nav-contact-box {
     height: 100vh;
@@ -1863,7 +1976,7 @@ body input:focus, body textarea:focus {
     background-color: #444764;
     z-index: 1;
     -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.6s ease-out;
     transition: -webkit-transform 0.6s ease-out;
     transition: transform 0.6s ease-out;
@@ -1871,7 +1984,7 @@ body input:focus, body textarea:focus {
   }
   body .nav-contact-box .nav-box-open {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
   }
   body .nav-contact-box .nav-box-open .close-burger {
     position: fixed;
@@ -1960,10 +2073,6 @@ body input:focus, body textarea:focus {
   body .about-me-and-skills-box .about-me-box .about-me-inner-box {
     height: 45vmin;
     left: 6rem;
-    overflow: hidden;
-  }
-  body .about-me-and-skills-box .about-me-box .about-me-inner-box:hover .description-box {
-    line-height: 1.5;
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .about-me-items {
     margin: auto 2rem;
@@ -1977,6 +2086,9 @@ body input:focus, body textarea:focus {
   }
   body .about-me-and-skills-box .about-me-box .about-me-inner-box .my-data-box strong {
     font-size: 2.5rem;
+  }
+  body .about-me-and-skills-box .about-me-box .about-me-inner-box .description-box p {
+    padding: 2rem 0;
   }
   body .about-me-and-skills-box .skills-box {
     height: 40vmin;
@@ -2021,6 +2133,20 @@ body input:focus, body textarea:focus {
         -ms-grid-row-align: center;
         align-self: center;
     margin-left: 0;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal {
+    visibility: visible;
+    -webkit-animation: showModalImg ease-out 1.2s forwards;
+    animation: showModalImg ease-out 1.2s forwards;
+  }
+  body .modal-bg .modal-content .div-for-projects .display-projects .img-modal-bg .exit-img-modal:hover {
+    cursor: pointer;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
   }
   body .contact-copyrights-box .contact-box > h3 {
     margin-left: 13rem;
@@ -2246,6 +2372,38 @@ body input:focus, body textarea:focus {
     opacity: 1;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showModalImg {
+  0% {
+    -webkit-transform: translateY(-9rem);
+    transform: translateY(-9rem);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes showModalImg {
+  0% {
+    -webkit-transform: translateY(-9rem);
+    transform: translateY(-9rem);
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
