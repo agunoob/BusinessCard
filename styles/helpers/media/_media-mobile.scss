@@ -1,0 +1,604 @@
+@media screen and (max-width: 425px) {
+    :root
+    {
+        font-size: 7px;
+    }
+
+    body
+    {
+        .div-for-flag
+        {
+            top: 2rem;
+            right: 2rem;
+            
+            .pl-flag, .uk-flag
+            {
+                width: 4.5rem;
+            }
+        }
+        
+        .burger-icon
+        {
+            display: block;
+        }
+
+        .arrow-box
+        {
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+        //nav-header-contact-part
+        .nav-contact-box
+        {
+            height: 100vh;
+
+            .nav-box-closed
+            {
+                
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-self: center;
+                background-color: map-get($color, accent);
+                z-index: 1;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                transition: transform 0.6s ease-out;
+            }
+
+            .nav-box-open
+            {
+                -webkit-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                transform: translateX(0%);
+
+                .close-burger
+                {
+                    position: fixed;
+                    top: 3rem;
+                    right: 3rem;
+                    display: block;
+
+                    & img {
+                    width: 2.5rem;
+                    }
+
+                    &:hover
+                    {
+                        cursor: pointer;
+                    }
+                }
+
+                a
+                {
+                    color: map-get($color, primary);
+                    font-size: map-get($font-size, big-for-menu);
+                    letter-spacing: map-get($letter-spacing, wide);
+                    position: relative;
+                }
+
+                a::before
+                {
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 0.1rem;
+                    background-color: map-get($color, primary);
+                    position: absolute;
+                    transition: width 0.3s ease-in-out;
+                }
+
+                a:hover, a:focus
+                {
+                    color: map-get($color, bright-orange);
+
+                }
+
+                a:hover::before, a:focus::before
+                {
+                    width: 120%;
+                    background-color: map-get($color, bright-orange);
+                }
+            }
+
+            .header-image
+            {
+                background-size: cover;
+
+                height: 50vh;
+                background-position: center;
+                // background-repeat: no-repeat;
+                background-size: cover;
+
+                .header-text-box
+                {
+                    h1
+                    {
+                        font-size: map-get($font-size, big-for-media);
+                    }
+
+                    .header-icons-box
+                    {
+                        justify-content: space-between;
+                        margin: 1rem auto;
+
+                        a img
+                        {
+                            width: 3rem;
+                            margin: 0;
+                        }
+
+                        .twitch img
+                        {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            .contact-me-box
+            {
+                height: 50vh;
+                justify-content: space-around;
+
+                h3
+                {
+                    font-size: map-get($font-size, big-for-contact);
+                    text-align: center;
+                    margin: auto 5rem;
+                }
+
+                .contact-me-buttons
+                {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    button
+                    {
+                        height: 9rem;
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .cv-bg
+        {
+
+            .exit-img-modal
+            {
+                visibility: visible;
+                -webkit-animation: showModalImg ease-out 1.2s forwards;
+                animation: showModalImg ease-out 1.2s forwards;
+                cursor: pointer;
+            }
+        }
+
+        //about-me-and-skills-part
+        .about-me-and-skills-box
+        {
+            height: calc(200vh);
+            align-items: center;
+            justify-content: center;
+
+            .about-me-box
+            {
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3
+                {
+                    position: static;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .about-me-inner-box
+                {
+                    height: 85%;
+                    width: 95%;
+                    left: 0;
+                    flex-direction: column;
+
+                    .profile-picture
+                    {
+                        height: 12rem;
+                        width: 12rem;
+                        border-radius: 12rem;
+                    }
+
+                    .my-data-box, .description-box
+                    {
+                      text-align: center;
+                    }
+
+                    .description-box
+                    {
+                        height: 40%;
+
+                        p
+                        {
+                            line-height: 3;
+                        }
+                    }
+                }
+            }
+            
+            .skills-box {
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                h3
+                {
+                    left: auto;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .skills-inner-box
+                {
+                    height: 85%;
+                    width: 95%;
+                    left: 0;
+                    flex-direction: column;
+
+                    .skills-items
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        pointer-events: none;
+                    }
+
+
+                    .html
+                    {
+                        align-self: flex-start;
+                        margin-left: 2rem;
+                        margin-top: 5rem;
+                    }
+
+                    .java-script
+                    {
+                        align-self: flex-end;
+                        margin-right: 2rem;
+                        margin-bottom: 5rem;
+                    }
+
+                    i img
+                    {
+                        width: 11rem;
+                    }
+
+                    p
+                    {
+                        padding: 0;
+                    }
+                }
+
+                .open-skills-mobile
+                {
+                    height: 85%;
+                    display: flex;
+                    flex-direction: row;
+                    background-color: map-get($color, primary);
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    i img, p
+                    {
+                        display: none;
+                    }
+
+                    .skills-items
+                    {
+                        display: none;
+                    }
+
+                    .skills-bar
+                    {
+                        height: 0;
+                        opacity: 0;
+                        transition: none;
+                        transition: height ease-out 0.6s, opacity ease 1s;
+                    }
+                    .skills-bar-mobile
+                    {
+                        position: relative;
+                        width: calc(100% / 3);
+                        height: 85%;
+                        opacity: 1;
+
+                        .for-header-and-number
+                        {
+                            flex-direction: column;
+                            height: 20%;
+
+                            .header
+                            {
+                                font-size: 2rem;
+                            }
+
+                            p
+                            {
+                                display: block;
+                            }
+
+                            .number
+                            {
+                                margin-left: 0;
+                            }
+
+                            .number-show
+                            {
+                                -webkit-animation: showNumber 3s forwards 0.3s;
+                                animation: showNumber 3s forwards 0.3s;
+                            }
+                        }
+
+                        .shine-header
+                        {
+                            -webkit-animation: shine ease 3s forwards 0.6s;
+                            animation: shine ease 3s forwards 0.6s;
+                        }
+
+                        .outside-bar
+                        {
+                            width: 3rem;
+                            height: 70%;
+                            align-items: flex-end;
+                            justify-content: center;
+
+                            .bar
+                            {
+                                height: 0;
+                                width: 90%;
+                            }
+
+                            .bar-html
+                            {
+                                -webkit-animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarHTMLMobile ease-out 1.8s forwards 0.65s;
+                            }
+        
+                            .bar-css
+                            {
+                                -webkit-animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarCSSMobile ease-out 1.8s forwards 0.65s;
+                            }
+        
+                            .bar-js
+                            {
+                                -webkit-animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+                                animation: shineBarJSMobile ease-out 1.8s forwards 0.65s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //portfolio-part
+        .portfolio-box
+        {
+            height: calc(2.12*100vh);
+            justify-content: center;
+
+            .portfolio-gallery
+            {
+                height: calc(2*100vh);
+                align-items: center;
+                justify-content: center;
+
+                .boxes
+                {
+                    height: calc(100%/6);
+                    width: 80%;
+
+                    .photo-cover button
+                    {
+                        height: 7rem;
+                        width: 95%;
+                        align-self: center;
+                        margin-left: 0;
+                    }
+
+                    img
+                    {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+            //modal in portfolio
+            .modal-bg
+            {
+                .modal-content
+                {
+                    height: 95%;
+                    width: 95%;
+
+                    .div-for-projects
+                    {
+                        margin: 0;
+                        flex-direction: column;
+                        height: 70%;
+                        overflow: auto;
+
+                        .display-projects
+                        {
+                            min-height: 20%;
+                            width: 90%;
+
+                            .img-modal-bg
+                            {
+                                img
+                                {
+                                    max-width: 95%;
+                                    height: auto;
+                                }
+
+                                .exit-img-modal
+                                {
+                                    visibility: visible;
+                                    -webkit-animation: showModalImg ease-out 1.2s forwards;
+                                    animation: showModalImg ease-out 1.2s forwards;
+
+                                    &:hover
+                                    {
+                                        cursor: pointer;
+                                        -webkit-transform: scale(0.9);
+                                        -ms-transform: scale(0.9);
+                                        transform: scale(0.9);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .exit-img
+                    {
+                        width: 3rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+
+        //contact-me-part
+        .contact-copyrights-box
+        {
+            height: 180vh;
+
+            .contact-box
+            {
+                height: 85%;
+                flex-direction: column;
+                align-items: center;
+                position: static;
+
+                &>h3
+                {
+                    position: static;
+                    margin: 0 auto 2.5rem auto;
+                }
+
+                .contact-form
+                {
+                    height: 90%;
+                    width: 100%;
+                    flex-direction: column;
+
+                    .form-info
+                    {
+                        height: 40%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+
+                        i img
+                        {
+                            margin: 0;
+                            width: 7rem;
+                        }
+
+                        .text-p
+                        {
+                            width: 70%;
+                            text-align: center;
+                            margin: 0;
+                        }
+
+                        &::after
+                        {
+                            top: 99%;
+                            right: 70%;
+                            border-top: 2rem solid map-get($color, accent);
+                            border-left: 2rem solid transparent;
+                            border-right: 2rem solid transparent;
+                        }
+                    }
+
+                    .form
+                    {
+                        height: 80%;
+                        width: 100%;
+                        padding: 2.5rem 2rem;
+
+                        h3
+                        {
+                            margin-left: 0;
+                            margin-top: 2rem;
+                            text-align: center;
+                        }
+
+                        form
+                        {
+                            height: 90%;
+
+                            input
+                            {
+                                height: 8%;
+                            }
+
+                            textarea
+                            {
+                                padding-top: 2rem;
+                            }
+
+                            button
+                            {
+                                width: 80%;
+                                height: 6rem;
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyrights
+            {
+                height: 15%;
+                flex-direction: column;
+
+                i
+                {
+                    display: none;
+                }
+
+                div p
+                {
+                    line-height: 1.5;
+                    text-align: center;
+                    font-size: map-get($font-size, extra-small);
+                }
+
+                .contact-icons-box
+                {
+                    a img
+                    {
+                        width: 3.5rem;
+                        margin-right: 6.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,144 +2,257 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <title>businessCard</title>
 </head>
 <body>
 
-    <nav class="nav-box">
-        <a>about me</a>
-        <a>skills</a>
-        <a>portfolio</a>
-        <a>contact</a>
-    </nav>
-    <header>
-        <div class="header-image">
-            <div class="header-text-box">
-                <h1>Welcome</h1>
-                <h2>My name is Aga</h2>
-                <div class="header-icons-box">
-                    <a><img src="./photos/facebook.png" width=18px></a>
-                    <a class="youtube"><img src="./photos/youtube.png" width= 20px></a>
-                    <a><img src="./photos/twitch.png" width= 18px></a>
+    <div class="div-for-flag">
+        <a href="./pl.html" class="pl-flag"><img src="./photos/icons/poland.svg" alt="PL flag"></a>
+    <!-- "./index.html"   "./photos/icons/uk.svg"  UK-flag-->
+    </div>
+    <i><img id="burger" class="burger-icon" src="./photos/icons/menu.svg"></i>
+    <div id="start-part" class="nav-contact-box">
+        <nav id="nav-box-open" class="nav-box nav-box-closed">
+            <i id="close-burger" class="close-burger"><img src="./photos/icons/cancel.svg"></i>
+            <a id="start">start</a>
+            <a id="about-me">about me
+                <!-- o mnie -->
+            </a>
+            <a id="portfolio">portfolio</a>
+            <a id="contact">contact
+                <!-- kontakt -->
+            </a>
+        </nav>
+        <header>
+            <div class="header-image">
+                <div class="header-image-effect"></div>
+                <div class="header-text-box">
+                    <h1>Welcome
+                        <!-- Witaj -->
+                    </h1>
+                    <h2>My name is Aga
+                        <!-- Jestem Aga -->
+                    </h2>
+                    <div class="header-icons-box">
+                        <a href="https://github.com/agunoob"><img src="./photos/icons/github.png"></a>
+                        <a href="https://www.facebook.com/agnieszka.skowronek.96"><img src="./photos/icons/facebook.png"></a>
+                        <a href="https://www.youtube.com/channel/UC_jNG_G7HxV0uhIIftEccCw/featured" class="youtube"><img src="./photos/icons/youtube-white.svg"></a>
+                        <a href="https://www.twitch.tv/agulive" class="twitch"><img src="./photos/icons/twitch.png"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="contact-me-box">
-        <h3>I'm here if you need help</h3>
-        <div class="contact-me-buttons">
-            <button>contact me</button>
-            <button>check my CV</button>
+        </header>
+        <div class="contact-me-box">
+            <h3>I'm here if you need any help
+                <!-- Możesz mnie tu znaleźć -->
+            </h3>
+            <div class="contact-me-buttons">
+                <button id="contact-me">contact me
+                    <!-- kontakt -->
+                </button>
+                <button id="check-my-cv-btn">check my CV
+                    <!-- moje CV -->
+                </button>
+            </div>
         </div>
     </div>
+    <div id="arrow-box" class="arrow-box"><i class="up-arrow"><img src="./photos/icons/up-arrow.svg"></i></div>
     
-    <div class="about-me-and-skills-box">
+    <div id="about-me-part" class="about-me-and-skills-box">
         <div class="about-me-box">
-            <h3>About me</h3>
+            <h3>About me
+                <!-- O mnie -->
+            </h3>
             <div class="about-me-inner-box">
-                <img class="about-me-items profile-picture" src="./photos/profile_picture.jpg">
-                <div class="about-me-items my-data-box">   
-                    <p class="my-data"><strong>Full Name:</strong> Agnieszka Skowronek</p>
-                    <p class="my-data"><strong>Phone number:</strong> 1029384857</p>
+                <img class="about-me-items profile-picture" src="./photos/profile_picture.jpg" alt="profile picture">
+                <div class="about-me-items my-data-box">
+                    <p class="my-data"><strong>Full Name:
+                        <!-- Imię: -->
+                    </strong> Agnieszka Skowronek</p>
+                    <p class="my-data"><strong>Phone number:
+                        <!-- Telefon: -->
+                    </strong> +48 784 612 191</p>
                     <p class="my-data"><strong>E-mail:</strong> agnieszka.skowronek@vp.pl</p>
                 </div>
                 <div class="about-me-items description-box">
-                    <p>opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis opis </p>
+                    <p>
+                        Front-end design and development appealed to me right at the first contact on November 2020. 
+                        Working with the computer that combines creation,
+                        building, mapping and attention to detail fits perfectly to my nature and skills.
+                        <!-- Web-develop./Front-end?? przypadł mi do serca już od pierwszego kontaktu w listopadzie 2020r. Praca przy komputerze
+                        łącząca w sobie tworzenie, budowanie, odwzorowywanie oraz dbałość o detale idealnie wpisują się w moją 
+                        osobowość i umiejętności. -->
+                    </p>
                 </div>
             </div>
         </div>
         <div class="skills-box">
-            <h3>Skills</h3>
+            <h3>Skills
+                <!-- Umiejętności -->
+            </h3>
             <div class="skills-inner-box">
-                <div class="skills-items html">
-                    <i><img src="./photos/html.png"></i>
+
+                <div id="html" class="skills-items html">
+                    <i><img src="./photos/icons/html.png" class="zdjecie img-html"></i>
                     <p>HTML</p>
                 </div>
-                <div class="skills-items css-sass">
-                    <i><img src="./photos/css.png"></i>
-                    <p>css/sass</p>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">HTML</h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-items java-script">
-                    <i><img src="./photos/js.png"></i>
+
+                <div id="css" class="skills-items css-sass">
+                    <i><img src="./photos/icons/css.png" class="zdjecie img-sass"></i>
+                    <p>CSS/SASS</p>
+                </div>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">CSS/SASS </h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="js" class="skills-items java-script">
+                    <i><img src="./photos/icons/js.png" class="zdjecie img-js"></i>
                     <p>JavaScript</p>
                 </div>
+
+                <div class="skills-bar">
+                    <div class="for-header-and-number">
+                        <h3 class="header">JavaScript</h3>
+                        <p class="number"></p>
+                    </div>
+                    <div class="outside-bar">
+                        <div class="bar">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
 
-    <div class="portfolio-box">
+    <div id="portfolio-part" class="portfolio-box">
         <h3>Portfolio</h3>
-        <div class="portfolio-gallery">
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
+        <div id="portfolio-gallery" class="portfolio-gallery">
+            <div class="boxes first-box">
+                <div class="photo-cover">
+                    <button class="btn" id="btn-first-pic">view
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img one-img" src="./photos/portfolio-rest/code-img.jpeg" alt="code">
             </div>
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
+            <div class="boxes second-box">
+                <div class="photo-cover">
+                    <button class="btn" id="btn-second-pic">view
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img two-img" src="./photos/portfolio-rest/photograph-img.jpeg" alt="photography">
             </div>
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
+            <div class="boxes third-box">
+                <div class="photo-cover">
+                    <button class="btn" id="btn-third-pic">view
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img three-img" src="./photos/portfolio-drawings/frog.jpg" alt="drawings">
             </div>
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
+            <div class="boxes fourth-box">
+                <div class="photo-cover">
+                    <button class="btn" id="btn-fourth-pic">view
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img four-img" src="./photos/portfolio-rest/design-img.jpg" alt="design">
             </div>
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
+            <div class="boxes fifth-box">
+                <div class="photo-cover">
+                    <button class="btn" id="btn-fifth-pic">empty
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img five-img" src="./photos/portfolio-rest/computer-img.jpg" alt="computer">
             </div>
-            <img src="" alt="">
-            <div class="photo-cover">
-                <h4>nazwa projektu</h4>
-                <p>zawartosc zawartosc zawartosc zawartosc zawartosc zawartosc </p>
-                <button>view</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-copyrights-box">
-        <h3>Contact me</h3>
-        <div>
-            <div>
-                <i></i>
-                <p></p>
-                <i></i>
-                <i></i>
-                <p>Aga</p>
-                <p>Poland, Kraków</p>
-                <p>ul. Ludwinowska</p>
-                <p>102938475</p>
-                <p>agnieszka.skowronek@vp.pl</p>
-            </div>
-            <div>
-                <h2></h2> <!-- ???h3??-->
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <button>send</button>
+            <div class="boxes sixth-box">
+                <div class="photo-cover">
+                     <button class="btn" id="btn-six-pic">view
+                        <!-- zobacz -->
+                    </button>
+                </div>
+                <img class="img six-img" src="./photos/portfolio-rest/games-img.jpg" alt="games">
             </div>
         </div>
     </div>
 
-    <h6>Copyrights &#169; 2021</h6>
+    <div id="contact-part" class="contact-copyrights-box">
+        <div class="contact-box">
+            <h3>Contact me
+                <!-- Kontakt -->
+            </h3>
+            <div class="contact-form">
+                <div class="form-info">
+                    <i><img src="./photos/icons/email.png"></i>
+                    <p class="text-p">If you have any question and you want to contact me, please use a form.<br> You can also call me or find me on social media.
+                        <!-- Jeśli masz jakieś pytania i chcesz się ze mną skontaktować, uzupełnij formularz.<br> Zadzwoń lub znajdź mnie na social mediach.</p> -->
+                </div>
+                <div class="form">
+                    <h3>Let's start
+                        <!-- Zaczynamy -->
+                    </h3>
+                    <form netlify>
+                        <input type="text" name="name" placeholder="name">
+                        <!-- imię -->
+                        <input type="email" name="email" placeholder="your e-mail adress" required>
+                        <!-- twój adres e-mail -->
+                        <input type="text" name="topic" placeholder="topic">
+                        <!-- temat -->
+                        <textarea name="message" placeholder="message" required></textarea>
+                        <!-- wiadomość -->
+                        <button id="btn-send">send</button>
+                        <!-- wyślij -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights">
+            <i><img src="./photos/icons/astronaut-ingravity.svg"></i>
+            <div class="name-box">
+                <p class="name">Agnieszka Skowronek</p>
+                <p>Kraków, Poland</p>
+                <!-- Polska -->
+            </div>
+            <div class="contact-icons-box">
+                <a href="https://github.com/agunoob"><img src="./photos/icons/github.svg"></a>
+                <a href="https://www.facebook.com/agnieszka.skowronek.96"><img src="./photos/icons/facebook.svg" width=20px></a>
+                <a href="https://www.youtube.com/channel/UC_jNG_G7HxV0uhIIftEccCw/featured" class="contact-youtube"><img src="./photos/icons/youtube.svg"></a>
+                <a href="https://www.twitch.tv/agulive" class="contact-twitch"><img src="./photos/icons/twitch.svg"></a>
+            </div>
+            <div class="mail-phone-box">
+                <p>phone: +48 784 612 191
+                    <!-- telefon: +48 784 612 191 -->
+                </p>
+                <p>e-mail: agnieszka.skowronek@vp.pl</p>
+            </div>
+        </div>
+    </div>
 
-    <script rel="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

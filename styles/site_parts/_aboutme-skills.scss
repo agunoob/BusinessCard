@@ -1,62 +1,91 @@
-.about-me-and-skills-box {
+.about-me-and-skills-box
+{
     height: 100vmin;
     width: 100%;
     display: flex;
     flex-direction: column;
 
-    .about-me-box {
-        height : 45vmin;
+    .about-me-box //zewnetrzny
+    {
+        height: 45vmin;
         width: 75%;
         position: relative;
         background-color: map-get($color, accent-fade);
         display: flex;
         align-items: center;
+        justify-items: center;
         
-        h3 {
+        h3
+        {
             position: absolute;
-            top: 8px;
-            left: 110px;
+            top: 1rem;
+            left: 10rem;
         }
 
-        .about-me-inner-box {
+        .about-me-inner-box //wewnetrzny
+        {
             height: 30vmin;
             width: 150%; //???????????? longer div
             position: relative;
-            left: 80px;
+            left: 8rem;
             display: flex;
             align-items: center;
             justify-content: center;
             @include box-shadow;
 
-            .about-me-items {
-                margin: auto 30px;
+            .about-me-items
+            {
+                margin: auto 3rem;
             }
 
-            .profile-picture {
-                height: 90px;
-                width: 90px;
+            .profile-picture
+            {
+                height: 9rem;
+                width: 9rem;
                 object-fit: cover;
-                border-radius: 50px;
+                border-radius: 5rem;
             }
 
-            .my-data-box { //?????? fit to container
-                height: 90%;
-                width: 60%;
-                padding: 0.6rem;
-                // background-color: red;
+            .my-data-box
+            {
+                padding: 0;
+                white-space: nowrap;
 
-                strong {
+                p
+                {
+                    letter-spacing: map-get($letter-spacing, narrow);
+                    line-height: 1.8;
+                }
+
+                strong
+                {
                     color: map-get($color, accent);
-                    font-size: map-get($font-size, medium);
+                    font-size: map-get($font-size, big);
                     font-weight: 900;
                     font-variant: all-small-caps;
-                    letter-spacing:  map-get($letter-spacing, c);
+                    letter-spacing: map-get($letter-spacing, mid-wide);
+                }
+            }
+
+            .description-box
+            {
+                height: 100%;
+                overflow: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5rem 0;
+
+                p
+                {
+                    line-height: 2;
                 }
             }
         }
     }
 
-    .skills-box {
+    .skills-box //zewnetrzny
+    {
         height : 45vmin;
         width: 75%;
         position: relative;
@@ -66,42 +95,149 @@
         align-self: flex-end;
         background-color: map-get($color, accent-fade);
         
-        h3 {
+        h3
+        {
             position: absolute;
-            top: 8px;
-            left: 30px;
+            top: 1rem;
+            left: 2rem;
         }
 
-        .skills-inner-box {
+        .skills-inner-box //wewnetrzny
+        {
             height: 30vmin;
             width: 150%; //????????????
             position: relative;
-            right: 80px;
+            right: 8rem;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             @include box-shadow;
 
-            .skills-items{
-                padding-left: 120px;
-                padding-right: 120px;
+            .skills-items
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
 
-                i img {
-                    width: 80px;
+            i 
+            {
+                img
+                {
+                    width: 8rem;
+                    cursor: pointer;
+                }
+            }
+
+            p
+            {
+                text-align: center;
+                font-size: map-get($font-size, small);
+                font-weight: bold;
+                color: map-get($color, accent)
+            }
+
+            .skills-bar
+            {
+                display: flex;
+                position: absolute;
+                background-color: map-get($color, primary);
+                height: 100%;
+                width: 0%;
+                opacity: 0;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                overflow: hidden;
+                transition: opacity ease 0.5s, width ease-in-out 0.5s;
+
+                .for-header-and-number
+                {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .header
+                    {
+                        top: 0;
+                        left: 0;
+                        font-size: map-get($font-size, big-for-menu);
+                        position: relative;
+                        background: linear-gradient(20deg, map-get($color, bright-orange), map-get($color, accent));
+                        background-position: right bottom;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-size: 900% 200%;
+                    }
+
+                    .number
+                    {
+                        width: 8rem;
+                        margin-left: 3rem;
+                        font-weight: normal;
+                        font-size: map-get($font-size, big-for-menu);
+                        color: map-get($color, secondary);
+                        opacity: 0;
+                    }
+
+                    .number-show
+                    {
+                        -webkit-animation: showNumber 3s forwards 0.3s;
+                        animation: showNumber 3s forwards 0.3s;
+                    }
                 }
 
-                p {
-                    padding-top: 20px;
-                    text-align: center;
-                    font-size: map-get($font-size, small);
-                    font-weight: bold;
-                    color: map-get($color, accent)
+                .shine-header
+                {
+                    -webkit-animation: shine ease 3s forwards 0.6s;
+                    animation: shine ease 3s forwards 0.6s;
                 }
 
-                &.css-sass{
-                    border-left: dotted 6px map-get($color, dark-orange) ;
-                    border-right: dotted 6px map-get($color, dark-orange) ;
+                .outside-bar
+                {
+                    width: 65%;
+                    height: 2rem;
+                    background-color: rgb(155, 155, 155);
+                    border: solid 0.2rem map-get($color, light-grey);
+                    border-radius: 0.6rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    // overflow: hidden;
+
+                    .bar
+                    {
+                        height: 90%;
+                        background-color: map-get($color, bright-orange);
+                        border-radius: 0.4rem;
+                        box-shadow: 0 0 1.5rem map-get($color, bright-orange);;
+                    }
+
+                    .bar-html
+                    {
+                        -webkit-animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+                        animation: shineBarHTML ease-out 1.8s forwards 0.65s;
+                    }
+
+                    .bar-css
+                    {
+                        -webkit-animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarCSS ease-out 1.8s forwards 0.65s;
+                    }
+
+                    .bar-js
+                    {
+                        -webkit-animation: shineBarJS ease-out 1.8s forwards 0.65s;
+                        animation: shineBarJS ease-out 1.8s forwards 0.65s;
+                    }
                 }
+            }
+
+            .open
+            {
+                width: 100%;
+                opacity: 1;
             }
         }
     }
